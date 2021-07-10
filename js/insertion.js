@@ -1,10 +1,9 @@
 async function insertionSort() {
     const inputArr = document.querySelectorAll(".bar");
     let length = inputArr.length;
-    inputArr[0].style.background = 'green';
     for (let i = 1; i < length; i++) {
         let key = inputArr[i].style.height;
-        inputArr[i].style.background = 'red';
+        inputArr[i].style.background = 'rgb(208, 230, 9)';
         let j = i - 1;
         await setDelay(delay);
         while (j >= 0 && (parseInt(inputArr[j].style.height)) > parseInt(key)) {

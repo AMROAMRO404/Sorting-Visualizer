@@ -2,7 +2,8 @@
 // Creating array to store randomly generated numbers
 let array = [];
 // To create new array input size of array
-function createNewArray(NumberOfBars = 50) {
+let NumberOfBars = 50;
+function createNewArray() {
     // calling helper function to delete old bars from dom
     deleteChild();
 
@@ -43,5 +44,12 @@ function setDelay(milisec) {
 
 const speedBtn = document.querySelector("#speed_sorting");
 speedBtn.addEventListener('input', async function(){
-    delay = speedBtn.value;
+    delay = parseInt(speedBtn.value);
+});
+
+
+const sizeBtn = document.querySelector("#array_size");
+sizeBtn.addEventListener('input', async function(){
+    NumberOfBars = parseInt(sizeBtn.value);
+    createNewArray();
 });
