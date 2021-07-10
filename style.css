@@ -22,16 +22,17 @@ body {
 }
 
 .flex-item {
-    background: cyan;
+    background: rgb(9, 167, 230);
     border: 1pt solid black;
-    width: 10px;
+    width: 15px;
     transition: 0.1s all ease;
 }
 
+/* 
 .row {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
-}
+} */
 
 #input {
     display: flex;

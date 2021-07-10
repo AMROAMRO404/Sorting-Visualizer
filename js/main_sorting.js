@@ -9,7 +9,7 @@ function createNewArray(NumberOfBars = 50) {
     // creating an array of random numbers 
     array = [];
     for (let i = 0; i < NumberOfBars; i++) {
-        array.push(Math.floor(Math.random() * 250) + 1);
+        array.push(Math.floor(Math.random() * 250) + 5);
     }
 
     // select the div #bars element
@@ -31,5 +31,12 @@ function deleteChild() {
     const bar = document.querySelector("#bars");
     bar.innerHTML = '';
 }
+let delay = document.querySelector("#speed_sorting").value;
+// Used in async function so that we can so animations of sorting, takes input time in ms (1000 = 1s)
+function waitforme(milisec) { 
+    return new Promise(resolve => { 
+        setTimeout(() => { resolve('') }, milisec); 
+    }) 
+}
 
-// createNewArray();
+

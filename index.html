@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="p-4 mb-3 bg-dark text-white">
+<body onload="createNewArray()" class="p-4 mb-3 bg-dark text-white">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Sorting Visualizer</a>
@@ -17,24 +18,25 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Sorting Algorithms
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Bubble Sort</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Merge Sort</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Insertion Sort</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Quick Sort</a></li>
-                </ul>
-              </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Sorting Algorithms
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><button class="dropdown-item" href="#">Bubble Sort</button></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><button class="dropdown-item" href="#">Merge Sort</button></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><button id="insertion_sort" class="dropdown-item" href="#">Insertion Sort</button></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><button class="dropdown-item" href="#">Quick Sort</button></li>
+                    </ul>
+                  </li>
               <li class="nav-item">
                 <span id="speed_span" style="color:white;margin-left: 15px;"class="nav-link">   
                     Speed
                     <input
+                    style="background:rgb(31, 179, 92)"
                     oninput="readRangeValue()"
                     id="speed_sorting"
                     type="range"
@@ -44,33 +46,26 @@
                     value="50">
                     <span id="value_speed">50</span>
                 </span>
-            </li>
-            <li class="nav-item">
-                <span id="size_span" style="color:white;margin-left: 15px;"class="nav-link">   
-                    Size 
-                    <input
-                     oninput="readRangeValue()"
-                     id="array_size"
-                     type="range"
-                     min="5"
-                     max="100"
-                     step="1"
-                     value="60">
-                    <span id="value_size">60</span>
-                </span>
-            </li>
-            </ul>
-            <form class="d-flex">
-                <button class="btn btn-outline-success m-2">
+              </li>
+              <li class="nav-item">
+                    <span id="size_span" style="color:white;margin-left: 15px;"class="nav-link">   
+                        Size 
+                        <input
+                        style="background:rgb(31, 179, 92)"
+                        oninput="readRangeValue()"
+                        id="array_size"
+                        type="range"
+                        min="5"
+                        max="100"
+                        step="1"
+                        value="60">
+                        <span id="value_size">60</span>
+                    </span>
+              </li>           
+            </ul>        
+            <button id="new_array" class="btn btn-outline-success m-2 d-flex">                   
                     <i style="font-size:24px" class="fa">&#xf021;</i>
-                </button>  
-              
-              <!-- <button class="btn btn-outline-success m-2" type="button">New Array</button>   -->
-              <button  class="btn btn-outline-secondary m-2" type="button">Bubble Sort</button>
-              <button class="btn btn-outline-secondary m-2" type="button">Merge Sort</button>  
-              <button class="btn btn-outline-secondary m-2" type="button">Insertion Sort</button>  
-              <button class="btn btn-outline-secondary m-2" type="button">Quick Sort</button>
-            </form>
+            </button>  
           </div>
         </div>
       </nav>
@@ -85,5 +80,6 @@
     <div id="bars" class="flex-container"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main_sorting.js"></script>
+    <script src="js/insertion.js"></script>
 </body>
 </html>
