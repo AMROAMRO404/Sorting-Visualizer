@@ -31,12 +31,17 @@ function deleteChild() {
     const bar = document.querySelector("#bars");
     bar.innerHTML = '';
 }
-let delay = document.querySelector("#speed_sorting").value;
+let delay = 50;
 // Used in async function so that we can so animations of sorting, takes input time in ms (1000 = 1s)
-function waitforme(milisec) { 
+function setDelay(milisec) { 
     return new Promise(resolve => { 
         setTimeout(() => { resolve('') }, milisec); 
     }) 
 }
 
 
+
+const speedBtn = document.querySelector("#speed_sorting");
+speedBtn.addEventListener('input', async function(){
+    delay = speedBtn.value;
+});
