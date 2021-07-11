@@ -15,8 +15,6 @@ function createNewArray() {
     bar.classList.add(`bar_No${i}`);
     bars.appendChild(bar);
   }
-  // html example
-  //   <span>&#124;</span>;
 }
 
 let delay = 50;
@@ -43,3 +41,14 @@ const new_arrayBtn = document.querySelector("#new_array");
 new_arrayBtn.addEventListener("click", async function () {
   createNewArray();
 });
+
+function disabledInputs() {
+  document.querySelector("#navbarDropdown").disabled = true;
+  document.querySelector("#speed_sorting").disabled = true;
+  document.querySelector("#array_size").disabled = true;
+}
+function enabledInputs() {
+  document.querySelector("#speed_sorting").disabled = false;
+  document.querySelector("#array_size").disabled = false;
+  document.querySelector("#navbarDropdown").disabled = false;
+}
