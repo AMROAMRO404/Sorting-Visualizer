@@ -64,20 +64,44 @@
               </li>           
             </ul>        
             <button id="new_array" class="btn btn-outline-success m-2 d-flex">                   
-                    <i style="font-size:24px" class="fa">&#xf021;</i>
+              <i style="font-size:24px" class="fa">&#xf021;</i>
             </button>  
+            <!-- Button trigger modal -->
+            <button id="time_sorting" type="button" class="btn btn-outline-success m-2 d-flex" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <i style='font-size:24px' class='fa'>&#xf017;</i>
+            </button>
           </div>
         </div>
       </nav>
-    <script>
-        function readRangeValue() {
-            var speed = document.getElementById("speed_sorting").value;
-            var size = document.getElementById("array_size").value;
-            document.getElementById("value_speed").innerHTML = " " + speed;
-            document.getElementById("value_size").innerHTML = " " + size;
-        }
-    </script>
+    
     <div id="bars" class="flex-container"></div>
+    
+
+    <!-- Modal -->
+    <div style="color:black;" class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="model_text" class="modal-body">
+            Start sorting to calculate time of the algorithm!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function readRangeValue() {
+          var speed = document.getElementById("speed_sorting").value;
+          var size = document.getElementById("array_size").value;
+          document.getElementById("value_speed").innerHTML = " " + speed;
+          document.getElementById("value_size").innerHTML = " " + size;
+      }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main_sorting.js"></script>
     <script src="js/insertion.js"></script>

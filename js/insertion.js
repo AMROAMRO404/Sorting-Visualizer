@@ -1,4 +1,5 @@
 async function insertionSort() {
+  totalDelay = 0;
   const inputArr = document.querySelectorAll(".bar");
   let length = inputArr.length;
   for (let i = 1; i < length; i++) {
@@ -6,11 +7,13 @@ async function insertionSort() {
     inputArr[i].style.background = "rgb(208, 230, 9)";
     let j = i - 1;
     await setDelay(delay);
+    totalDelay += delay;
     while (j >= 0 && parseInt(inputArr[j].style.height) > parseInt(key)) {
       inputArr[j].style.background = "red";
       inputArr[j + 1].style.height = inputArr[j].style.height;
       j = j - 1;
       await setDelay(delay);
+      totalDelay += delay;
       for (let k = i; k >= 0; k--) {
         inputArr[k].style.background = "green";
       }
@@ -21,6 +24,7 @@ async function insertionSort() {
   for (let i = 0; i < length; i++) {
     inputArr[i].style.background = "red";
     await setDelay(50);
+    totalDelay += delay;
     inputArr[i].style.background = "green";
   }
 }
@@ -30,6 +34,6 @@ inSortbtn.addEventListener("click", async function () {
   var start = window.performance.now();
   await insertionSort();
   var end = window.performance.now();
-  alert(`Execution time: ${end - start} ms`);
+  writeTime(end, start);
   enabledInputs();
 });

@@ -1,6 +1,7 @@
 let array = [];
 let NumberOfBars = 50;
 function createNewArray() {
+  enabledInputs();
   document.querySelector("#bars").innerHTML = ""; // to delete the past bars
   array = [];
   for (let i = 0; i < NumberOfBars; i++) {
@@ -43,12 +44,21 @@ new_arrayBtn.addEventListener("click", async function () {
 });
 
 function disabledInputs() {
+  document.querySelector("#time_sorting").disabled = true;
   document.querySelector("#navbarDropdown").disabled = true;
   document.querySelector("#speed_sorting").disabled = true;
   document.querySelector("#array_size").disabled = true;
 }
 function enabledInputs() {
+  document.querySelector("#time_sorting").disabled = false;
   document.querySelector("#speed_sorting").disabled = false;
   document.querySelector("#array_size").disabled = false;
   document.querySelector("#navbarDropdown").disabled = false;
 }
+
+function writeTime(end, start) {
+  document.querySelector("#model_text").innerHTML = `Execution time: ${
+    end - start - totalDelay
+  } ms`;
+}
+let totalDelay = 0;
