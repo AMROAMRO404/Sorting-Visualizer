@@ -5,7 +5,7 @@
 - Bubble Sort (TODO)
 - Insertion Sort
 - Quick Sort (TODO)
-- Merge Sort (TODO)
+- Merge Sort
 
 ### Built using HTML, CSS, AND JS <br/>
 
