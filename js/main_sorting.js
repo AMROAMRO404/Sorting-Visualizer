@@ -1,5 +1,5 @@
 let array = [];
-let NumberOfBars = 50;
+let NumberOfBars = 30;
 function createNewArray() {
   enabledInputs();
   document.querySelector("#bars").innerHTML = ""; // to delete the past bars

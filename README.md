@@ -2,7 +2,7 @@
 
 ### Algoritms used:
 
-- Bubble Sort (TODO)
+- Bubble Sort
 - Insertion Sort
 - Quick Sort (TODO)
 - Merge Sort
