@@ -44,26 +44,14 @@ new_arrayBtn.addEventListener("click", async function () {
 });
 
 function disabledInputs() {
-  document.querySelector("#time_sorting").disabled = true;
+  // document.querySelector("#time_sorting").disabled = true;
   document.querySelector("#navbarDropdown").disabled = true;
   document.querySelector("#speed_sorting").disabled = true;
   document.querySelector("#array_size").disabled = true;
 }
 function enabledInputs() {
-  document.querySelector("#time_sorting").disabled = false;
+  // document.querySelector("#time_sorting").disabled = false;
   document.querySelector("#speed_sorting").disabled = false;
   document.querySelector("#array_size").disabled = false;
   document.querySelector("#navbarDropdown").disabled = false;
 }
-
-function writeTime(end, start) {
-  console.log(`start ${start}`);
-  console.log(`end ${end}`);
-  console.log(`totalDelay ${totalDelay}`);
-  let time = end - start - totalDelay;
-  console.log(`time : ${time}`);
-  document.querySelector(
-    "#model_text"
-  ).innerHTML = `Execution time: ${time} ms`;
-}
-let totalDelay = 0;

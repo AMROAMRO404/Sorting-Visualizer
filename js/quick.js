@@ -10,27 +10,23 @@ async function partition(arr, left, right) {
     j = right; //right pointer
   arr[Math.floor((right + left) / 2)].style.background = "white";
   await setDelay(delay + 60);
-  totalDelay += delay + 60;
   arr[Math.floor((right + left) / 2)].style.background = "";
 
   while (i <= j) {
     while (parseInt(arr[i].style.height) < parseInt(pivot)) {
       arr[i].style.background = "red";
       await setDelay(delay);
-      totalDelay += delay;
       arr[i].style.background = "";
       i++;
     }
     while (parseInt(arr[j].style.height) > parseInt(pivot)) {
       arr[j].style.background = "rgb(12, 175, 240)";
       await setDelay(delay);
-      totalDelay += delay;
       arr[j].style.background = "";
       j--;
     }
     if (i <= j) {
       await setDelay(delay);
-      totalDelay += delay;
       swap(arr, i, j); //sawpping two elements
       i++;
       j--;
@@ -46,13 +42,11 @@ async function quickSort(arr, left, right, length) {
     if (left < index - 1) {
       //more elements on the left side of the pivot
       await setDelay(delay);
-      totalDelay += delay;
       await quickSort(arr, left, index - 1, length);
     }
     if (index < right) {
       //more elements on the right side of the pivot
       await setDelay(delay);
-      totalDelay += delay;
       await quickSort(arr, index, right, length);
     }
   }
@@ -64,15 +58,12 @@ quickSortbtn.addEventListener("click", async function () {
   const arr = document.querySelectorAll(".bar");
   let length = arr.length;
   disabledInputs();
-  totalDelay = 0;
-  var start = window.performance.now();
+  startFun();
   await quickSort(arr, 0, length - 1, length);
-  var end = window.performance.now();
-  writeTime(end, start);
+  stop();
   for (let i = 0; i < length; i++) {
     arr[i].style.background = "red";
     await setDelay(50);
-    totalDelay += 50;
     arr[i].style.background = "green";
   }
   enabledInputs();

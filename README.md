@@ -15,4 +15,3 @@
 
 <img src="imgs/1.PNG"> <br/>
 <img src="imgs/2.PNG"> <br/>
-<img src="imgs/3.PNG"> <br/>
