@@ -31,7 +31,7 @@ inSortbtn.addEventListener("click", async function () {
   for (let i = 0; i < length; i++) {
     inputArr[i].style.background = "red";
     await setDelay(50);
-    totalDelay += delay;
+    totalDelay += 50;
     inputArr[i].style.background = "green";
   }
   writeTime(end, start);

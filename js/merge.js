@@ -87,10 +87,10 @@ mergeBtn.addEventListener("click", async function () {
   const arr = document.querySelectorAll(".bar");
   let length = arr.length;
   disabledInputs();
-  var start = window.performance.now();
+  var start = performance.now();
   totalDelay = 0;
   await mergeSort(arr, 0, length - 1);
-  var end = window.performance.now();
+  var end = performance.now();
   writeTime(end, start);
   for (let i = 0; i < length; i++) {
     arr[i].style.background = "red";

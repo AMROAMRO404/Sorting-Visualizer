@@ -57,8 +57,13 @@ function enabledInputs() {
 }
 
 function writeTime(end, start) {
-  document.querySelector("#model_text").innerHTML = `Execution time: ${
-    end - start - totalDelay
-  } ms`;
+  console.log(`start ${start}`);
+  console.log(`end ${end}`);
+  console.log(`totalDelay ${totalDelay}`);
+  let time = end - start - totalDelay;
+  console.log(`time : ${time}`);
+  document.querySelector(
+    "#model_text"
+  ).innerHTML = `Execution time: ${time} ms`;
 }
 let totalDelay = 0;

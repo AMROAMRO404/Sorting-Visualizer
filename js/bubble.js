@@ -35,7 +35,7 @@ bblSortbtn.addEventListener("click", async function () {
   for (let i = 0; i < length; i++) {
     arr[i].style.background = "red";
     await setDelay(50);
-    totalDelay += delay;
+    totalDelay += 50;
     arr[i].style.background = "green";
   }
   writeTime(end, start);

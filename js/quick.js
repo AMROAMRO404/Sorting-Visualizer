@@ -10,7 +10,7 @@ async function partition(arr, left, right) {
     j = right; //right pointer
   arr[Math.floor((right + left) / 2)].style.background = "white";
   await setDelay(delay + 60);
-  totalDelay += delay;
+  totalDelay += delay + 60;
   arr[Math.floor((right + left) / 2)].style.background = "";
 
   while (i <= j) {
@@ -71,7 +71,7 @@ quickSortbtn.addEventListener("click", async function () {
   for (let i = 0; i < length; i++) {
     arr[i].style.background = "red";
     await setDelay(50);
-    totalDelay += delay;
+    totalDelay += 50;
     arr[i].style.background = "green";
   }
   writeTime(end, start);
