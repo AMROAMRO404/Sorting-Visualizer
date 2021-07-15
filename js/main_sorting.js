@@ -1,5 +1,6 @@
 let array = [];
 let NumberOfBars = 30;
+let totalDelay;
 function createNewArray() {
   enabledInputs();
   document.querySelector("#bars").innerHTML = ""; // to delete the past bars
@@ -13,7 +14,6 @@ function createNewArray() {
     bar.style.height = `${array[i] * 2}px`;
     bar.classList.add("bar");
     bar.classList.add("vertical_line");
-    bar.classList.add(`bar_No${i}`);
     bars.appendChild(bar);
   }
 }
@@ -44,13 +44,11 @@ new_arrayBtn.addEventListener("click", async function () {
 });
 
 function disabledInputs() {
-  // document.querySelector("#time_sorting").disabled = true;
   document.querySelector("#navbarDropdown").disabled = true;
   document.querySelector("#speed_sorting").disabled = true;
   document.querySelector("#array_size").disabled = true;
 }
 function enabledInputs() {
-  // document.querySelector("#time_sorting").disabled = false;
   document.querySelector("#speed_sorting").disabled = false;
   document.querySelector("#array_size").disabled = false;
   document.querySelector("#navbarDropdown").disabled = false;

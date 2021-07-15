@@ -13,6 +13,11 @@ async function bblSort(arr, length) {
         var temp = arr[j].style.height;
         arr[j].style.height = arr[j + 1].style.height;
         arr[j + 1].style.height = temp;
+        arr[j].style.background = "white";
+        arr[j + 1].style.background = "white";
+        await setDelay(50);
+        arr[j].style.background = "";
+        arr[j + 1].style.background = "";
       }
     }
     arr[length - i - 1].style.background = "red";

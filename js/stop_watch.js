@@ -1,7 +1,8 @@
 var startTime, interval;
 
 function startFun() {
-  document.getElementById("timer").innerHTML = "Excution time: 0 milliseconds";
+  document.getElementById("timer").innerHTML =
+    "Excution time: 0 milliseconds, may there is an additional delay";
   startTime = Date.now();
   interval = setInterval(function () {
     updateDisplay(Date.now() - startTime);
@@ -13,5 +14,7 @@ function stop() {
 }
 
 function updateDisplay(currentTime) {
-  document.getElementById("timer").innerHTML = currentTime + " milliseconds";
+  document.getElementById("timer").innerHTML =
+    `Excution time: ${currentTime} milliseconds ` +
+    ", may there is an additional delay";
 }
