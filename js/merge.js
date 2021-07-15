@@ -36,6 +36,7 @@ async function merge(arr, l, m, r) {
 
   while (i < n1 && j < n2) {
     await setDelay(delay);
+    totalDelay += delay;
     if (parseInt(L[i]) <= parseInt(R[j])) {
       arr[k].style.height = L[i];
 
@@ -51,6 +52,7 @@ async function merge(arr, l, m, r) {
   // L[], if there are any
   while (i < n1) {
     await setDelay(delay);
+    totalDelay += delay;
     arr[k].style.height = L[i];
     i++;
     k++;
@@ -60,6 +62,7 @@ async function merge(arr, l, m, r) {
   // R[], if there are any
   while (j < n2) {
     await setDelay(delay);
+    totalDelay += delay;
     arr[k].style.height = R[j];
     j++;
     k++;
@@ -85,6 +88,7 @@ mergeBtn.addEventListener("click", async function () {
   let length = arr.length;
   disabledInputs();
   var start = window.performance.now();
+  totalDelay = 0;
   await mergeSort(arr, 0, length - 1);
   var end = window.performance.now();
   writeTime(end, start);
