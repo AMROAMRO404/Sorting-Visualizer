@@ -1,6 +1,5 @@
 let array = [];
 let NumberOfBars = 30;
-let totalDelay;
 function createNewArray() {
   enabledInputs();
   document.querySelector("#bars").innerHTML = ""; // to delete the past bars
@@ -40,6 +39,8 @@ sizeBtn.addEventListener("input", async function () {
 
 const new_arrayBtn = document.querySelector("#new_array");
 new_arrayBtn.addEventListener("click", async function () {
+  document.getElementById("timer").innerHTML =
+    "Excution time: 0 milliseconds, may there is an additional delay";
   createNewArray();
 });
 
@@ -47,9 +48,11 @@ function disabledInputs() {
   document.querySelector("#navbarDropdown").disabled = true;
   document.querySelector("#speed_sorting").disabled = true;
   document.querySelector("#array_size").disabled = true;
+  document.querySelector("#new_array").disabled = true;
 }
 function enabledInputs() {
   document.querySelector("#speed_sorting").disabled = false;
   document.querySelector("#array_size").disabled = false;
   document.querySelector("#navbarDropdown").disabled = false;
+  document.querySelector("#new_array").disabled = false;
 }

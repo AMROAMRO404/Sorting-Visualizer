@@ -1,5 +1,6 @@
 // Reference: https://www.geeksforgeeks.org/bubble-sort-algorithms-by-using-javascript/
 // Creating the bblSort function
+totalDelay = 0;
 async function bblSort(arr, length) {
   for (var i = 0; i < length; i++) {
     // Last i elements are already in place
@@ -13,11 +14,6 @@ async function bblSort(arr, length) {
         var temp = arr[j].style.height;
         arr[j].style.height = arr[j + 1].style.height;
         arr[j + 1].style.height = temp;
-        arr[j].style.background = "white";
-        arr[j + 1].style.background = "white";
-        await setDelay(50);
-        arr[j].style.background = "";
-        arr[j + 1].style.background = "";
       }
     }
     arr[length - i - 1].style.background = "red";

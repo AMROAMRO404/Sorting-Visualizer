@@ -12,9 +12,9 @@ function startFun() {
 function stop() {
   clearInterval(interval);
 }
-
+let currentTime;
 function updateDisplay(currentTime) {
-  document.getElementById("timer").innerHTML =
-    `Excution time: ${currentTime} milliseconds ` +
-    ", may there is an additional delay";
+  document.getElementById(
+    "timer"
+  ).innerHTML = `Excution time: ${currentTime}, may there is an additional delay `;
 }

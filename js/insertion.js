@@ -25,9 +25,10 @@ inSortbtn.addEventListener("click", async function () {
   startFun();
   await insertionSort();
   stop();
+  totalDelay = 0;
   for (let i = 0; i < length; i++) {
     inputArr[i].style.background = "red";
-    await setDelay(50);
+    await specDelay(50);
     inputArr[i].style.background = "green";
   }
   enabledInputs();
