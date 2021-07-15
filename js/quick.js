@@ -68,12 +68,12 @@ quickSortbtn.addEventListener("click", async function () {
   var start = window.performance.now();
   await quickSort(arr, 0, length - 1, length);
   var end = window.performance.now();
+  writeTime(end, start);
   for (let i = 0; i < length; i++) {
     arr[i].style.background = "red";
     await setDelay(50);
     totalDelay += 50;
     arr[i].style.background = "green";
   }
-  writeTime(end, start);
   enabledInputs();
 });

@@ -28,12 +28,12 @@ inSortbtn.addEventListener("click", async function () {
   var start = window.performance.now();
   await insertionSort();
   var end = window.performance.now();
+  writeTime(end, start);
   for (let i = 0; i < length; i++) {
     inputArr[i].style.background = "red";
     await setDelay(50);
     totalDelay += 50;
     inputArr[i].style.background = "green";
   }
-  writeTime(end, start);
   enabledInputs();
 });
